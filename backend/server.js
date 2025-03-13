@@ -11,9 +11,10 @@ const app = express();
 app.use(cors());
 
 const server = http.createServer(app);
+console.log("Opened to : " + process.env.CLIENT_URL);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: process.env.CLIENT_URL || '*',
     methods: ['GET', 'POST'],
     credentials: true
   },

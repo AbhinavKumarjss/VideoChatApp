@@ -38,7 +38,7 @@ export default function Room() {
   useEffect(() => {
     // Connect to socket server
     // Ensure we always have a string URL
-    const socketUrl: string = process.env.NEXT_PUBLIC_SOCKET_URL;
+    const socketUrl: any = process.env.NEXT_PUBLIC_SOCKET_URL || '';
     console.log('Connecting to socket server at:', socketUrl);
     
     // Create a single socket instance
